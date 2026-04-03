@@ -5,6 +5,9 @@
   "compatibility_date": "2026-03-02",
   "compatibility_flags": ["nodejs_compat"],
   "ai": { "binding": "AI", "remote": true },
+  "vars": {
+    "AI_GATEWAY_ID": "my-agent-gateway"
+  },
   "assets": {
     "directory": "./public",
     "not_found_handling": "single-page-application",
