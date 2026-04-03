@@ -3,15 +3,29 @@
   "name": "my-agent-starter",
   "main": "src/server.ts",
   "compatibility_date": "2026-03-02",
-  "compatibility_flags": ["nodejs_compat"],
-  "ai": { "binding": "AI", "remote": true },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "ai": {
+    "binding": "AI",
+    "remote": true
+  },
   "vars": {
     "AI_GATEWAY_ID": "my-agent-gateway"
   },
   "assets": {
     "directory": "./public",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/agents/*", "/oauth/*"]
+    "run_worker_first": [
+      "/agents/*",
+      "/oauth/*"
+    ]
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true
+    }
   },
   "durable_objects": {
     "bindings": [
@@ -23,8 +37,10 @@
   },
   "migrations": [
     {
-      "new_sqlite_classes": ["ChatAgent"],
+      "new_sqlite_classes": [
+        "ChatAgent"
+      ],
       "tag": "v1"
     }
-  ]
+  ],
 }
