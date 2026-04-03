@@ -71,7 +71,7 @@ export class ChatAgent extends AIChatAgent<Env> {
     const gatewayId = this.env.AI_GATEWAY_ID;
 
     const result = streamText({
-      model: workersai("@cf/moonshotai/kimi-k2.5", {
+      model: workersai("@cf/zai-org/glm-4.7-flash", {
         sessionAffinity: this.sessionAffinity,
         gateway: { id: gatewayId }
       }),
