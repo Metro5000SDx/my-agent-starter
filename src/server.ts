@@ -68,10 +68,12 @@ export class ChatAgent extends AIChatAgent<Env> {
   async onChatMessage(_onFinish: unknown, options?: OnChatMessageOptions) {
     const mcpTools = this.mcp.getAITools();
     const workersai = createWorkersAI({ binding: this.env.AI });
+    const gatewayId = this.env.AI_GATEWAY_ID;
 
     const result = streamText({
-      model: workersai("@cf/moonshotai/kimi-k2.5", {
-        sessionAffinity: this.sessionAffinity
+      model: workersai("@cf/zai-org/glm-4.7-flash", {
+        sessionAffinity: this.sessionAffinity,
+        gateway: { id: gatewayId }
       }),
       system: `You are a helpful assistant that can understand images. You can check the weather, get the user's timezone, run calculations, and schedule tasks. When users share images, describe what you see and answer questions about them.
 

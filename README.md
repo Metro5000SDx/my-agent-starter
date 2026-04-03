@@ -1,4 +1,4 @@
-# Agent Starter
+# Cloudflare Agent Starter
 
 ![npm i agents command](./npm-agents-banner.svg)
 
